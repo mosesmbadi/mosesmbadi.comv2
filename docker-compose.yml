@@ -1,0 +1,10 @@
+services:
+  api:
+    image: mosesmbadi-api:latest
+    ports:
+      - "3009:3009"
+
+  frontend:
+    image: mosesmbadi-frontend:latest
+    ports:
+      - "5174:5173"

@@ -1,4 +1,42 @@
 services:
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: calcom
+      POSTGRES_PASSWORD: calcom
+      POSTGRES_DB: calcom
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U calcom"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  calcom-migrate:
+    image: calcom/cal.com:latest
+    env_file:
+      - cal.env
+    command: sh -c "cd /calcom && npx prisma migrate deploy"
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  calcom:
+    image: calcom/cal.com:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - cal.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      calcom-migrate:
+        condition: service_completed_successfully
+
   api:
     image: mosesmbadi-api:latest
     ports:
@@ -8,3 +46,6 @@ services:
     image: mosesmbadi-frontend:latest
     ports:
       - "5174:5173"
+
+volumes:
+  postgres_data:

@@ -21,3 +21,29 @@ cd frontend
 bun install
 bun format
 bun dev
+
+
+To get started
+1. Create your secrets file
+
+
+cp cal.env.example cal.env
+Then fill in cal.env:
+
+Generate secrets: openssl rand -base64 32 (run twice — one for each key)
+Set NEXTAUTH_URL=http://localhost:3000 for local dev
+2. Start everything
+
+
+docker compose -f docker-compose-local.yml up
+Cal.com will take 2–4 minutes on first boot — it's running Prisma migrations against PostgreSQL.
+
+3. Create your account + event type
+
+Visit http://localhost:3000 and sign up
+Create an event type with the slug meet
+That gives you the mosesmbadi/meet calLink the embed uses
+4. Production
+Set VITE_CAL_ORIGIN=https://cal.yourdomain.com as a build arg in your GitHub Actions workflow (or as a Docker build arg) so the frontend bakes in the right URL at build time.
+
+Note on NEXT_PUBLIC_DISABLE_SIGNUP — uncomment that line in cal.env once you've created your account. It blocks anyone else from registering on your self-hosted instance.

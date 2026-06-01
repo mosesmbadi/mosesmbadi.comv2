@@ -1,0 +1,75 @@
+{
+  "nextId": 6,
+  "courses": [
+    {
+      "id": 1,
+      "title": "Kubernetes Local Lab",
+      "description": "A hands-on Kubernetes course where you set up a real K8s cluster on your local machine. Learn pods, services, deployments, and ingress through curated practical exercises drawn from real enterprise environments.",
+      "duration": "6 weeks",
+      "thumbnail": "",
+      "maxAttendees": 20,
+      "price": 4500,
+      "location": "Online",
+      "trailerYouTubeLink": "",
+      "prerequisites": "Basic Linux command line, familiarity with Docker",
+      "requirements": "A machine with at least 8GB RAM, Docker installed",
+      "createdAt": "2026-06-01T18:01:18.992Z"
+    },
+    {
+      "id": 2,
+      "title": "Networking for Software Engineers",
+      "description": "Demystify the networking concepts every software engineer needs: DNS, HTTP/HTTPS, TCP/IP, SSL certificates, proxies, and more. Built around real-world scenarios you will actually encounter on the job.",
+      "duration": "4 weeks",
+      "thumbnail": "",
+      "maxAttendees": 30,
+      "price": 3000,
+      "location": "Online",
+      "trailerYouTubeLink": "",
+      "prerequisites": "Basic programming knowledge",
+      "requirements": "A laptop with internet connection",
+      "createdAt": "2026-06-01T18:01:18.993Z"
+    },
+    {
+      "id": 3,
+      "title": "Django REST API Masterclass",
+      "description": "Build production-grade REST APIs with Django Rest Framework. Covers authentication, serialization, performance optimization with caching, and full deployment to a cloud server.",
+      "duration": "8 weeks",
+      "thumbnail": "",
+      "maxAttendees": 25,
+      "price": 5000,
+      "location": "Online",
+      "trailerYouTubeLink": "",
+      "prerequisites": "Basic Python knowledge",
+      "requirements": "Python 3.x installed, any code editor",
+      "createdAt": "2026-06-01T18:01:18.993Z"
+    },
+    {
+      "id": 4,
+      "title": "DevOps with Docker & CI/CD",
+      "description": "Learn containerization with Docker, multi-service orchestration with Docker Compose, and automated CI/CD pipelines with GitHub Actions. Go from writing code to deploying it with every push.",
+      "duration": "6 weeks",
+      "thumbnail": "",
+      "maxAttendees": 20,
+      "price": 4500,
+      "location": "Online",
+      "trailerYouTubeLink": "",
+      "prerequisites": "Basic Linux, some programming experience",
+      "requirements": "Docker installed, GitHub account",
+      "createdAt": "2026-06-01T18:01:18.993Z"
+    },
+    {
+      "id": 5,
+      "title": "Cloud DevOps Engineering",
+      "description": "End-to-end cloud infrastructure: deploy applications on AWS, manage infrastructure with Terraform, set up monitoring and alerting, and implement security best practices used in real enterprise environments.",
+      "duration": "10 weeks",
+      "thumbnail": "",
+      "maxAttendees": 15,
+      "price": 7000,
+      "location": "Online",
+      "trailerYouTubeLink": "",
+      "prerequisites": "Linux basics, Docker experience, some DevOps exposure",
+      "requirements": "AWS free tier account, laptop with at least 8GB RAM",
+      "createdAt": "2026-06-01T18:01:18.993Z"
+    }
+  ]
+}

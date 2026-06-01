@@ -13,14 +13,14 @@ function subscribe() {
 const socials = [
   {
     label: 'Facebook',
-    href: '#',
+    href: 'https://www.facebook.com/mbadi.107483',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
     </svg>`,
   },
   {
     label: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/mbadimoses/',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
       <circle cx="12" cy="12" r="4"/>
@@ -29,7 +29,7 @@ const socials = [
   },
   {
     label: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/moses-mbadi-0b8500198/',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
       <rect x="2" y="9" width="4" height="12"/>
@@ -38,14 +38,19 @@ const socials = [
   },
   {
     label: 'X',
-    href: '#',
+    href: 'https://x.com/mosesmbadi',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
     </svg>`,
   },
 ]
 
-const links = ['About', 'Services', 'Projects', 'Meet the Team', 'Contact Us']
+const links = [
+  { label: 'Home', to: '/' },
+  { label: 'Courses', to: '/courses' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
+]
 </script>
 
 <template>
@@ -65,6 +70,8 @@ const links = ['About', 'Services', 'Projects', 'Meet the Team', 'Contact Us']
             :key="s.label"
             :href="s.href"
             :aria-label="s.label"
+            target="_blank"
+            rel="noopener"
             class="footer__social"
             v-html="s.icon"
           />
@@ -75,8 +82,8 @@ const links = ['About', 'Services', 'Projects', 'Meet the Team', 'Contact Us']
       <div class="footer__col">
         <h3 class="footer__heading">Useful Links</h3>
         <ul class="footer__links">
-          <li v-for="link in links" :key="link">
-            <a href="#" class="footer__link">{{ link }}</a>
+          <li v-for="link in links" :key="link.to">
+            <RouterLink :to="link.to" class="footer__link">{{ link.label }}</RouterLink>
           </li>
         </ul>
       </div>

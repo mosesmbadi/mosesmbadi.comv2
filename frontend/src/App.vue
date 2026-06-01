@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import Classes from './components/Classes.vue'
-import Calendar from './components/Calendar.vue'
+import { useRoute } from 'vue-router'
+import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+
+const route = useRoute()
 </script>
 
 <template>
-  <main>
-    <Calendar />
-    <Classes />
-    <Footer />
-  </main>
+  <Navbar />
+  <RouterView />
+  <Footer v-if="route.path !== '/admin'" />
 </template>

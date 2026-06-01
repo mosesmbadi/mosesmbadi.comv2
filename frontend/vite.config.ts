@@ -21,7 +21,8 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173,
     proxy: {
-      '/classes': 'http://api:3009',
+      '/courses': 'http://api:3009',
+      '/auth': 'http://api:3009',
     },
     watch: {
       // Docker on Windows doesn't propagate inotify events into containers,

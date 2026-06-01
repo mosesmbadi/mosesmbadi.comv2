@@ -12,13 +12,11 @@ const error = ref<string | null>(null)
 
 onMounted(async () => {
   try {
-    const cal = await getCalApi({
-      embedJsUrl: `${CAL_ORIGIN}/embed/embed.js`,
-    })
+    const cal = await getCalApi(`${CAL_ORIGIN}/embed/embed.js`)
 
     cal('inline', {
       elementOrSelector: '#moses-cal-frame',
-      calLink: 'mosesmbadi/meet',
+      calLink: 'moses/secret',
       config: {
         layout: 'month_view',
         theme: 'dark',

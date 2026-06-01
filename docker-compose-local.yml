@@ -38,7 +38,9 @@ services:
         condition: service_completed_successfully
 
   api:
-    build: ./api
+    build:
+      context: ./api
+      dockerfile: Dockerfile.local
     ports:
       - "3009:3009"
     volumes:
